@@ -1,0 +1,2 @@
+# ローカル開発用。localhost からのアクセスに限り Access の JWT 検証をスキップして、このユーザーとして扱う
+DEV_USER_EMAIL=dev@example.com

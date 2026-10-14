@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "man-hour-cf",
+  "main": "src/index.tsx",
+  "compatibility_date": "2026-10-01",
+  "assets": { "directory": "./public" },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "man-hour",
+      "migrations_dir": "migrations"
+    }
+  ]
+}

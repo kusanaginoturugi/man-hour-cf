@@ -1,0 +1,52 @@
+@font-face {
+  font-family: "Source Han Sans JP";
+  src: url("/fonts/SourceHanSansJP-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-display: block;
+}
+@font-face {
+  font-family: "Source Han Sans JP";
+  src: url("/fonts/SourceHanSansJP-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-display: block;
+}
+
+@page {
+  size: A4 landscape;
+  margin: 15mm 10mm;
+
+  @top-left {
+    font-family: "Source Han Sans JP", sans-serif;
+    font-size: 10pt;
+    border-bottom: 0.5pt solid #000;
+    vertical-align: bottom;
+    padding-bottom: 1mm;
+  }
+  @bottom-center {
+    content: counter(page) " of " counter(pages);
+    font-family: "Source Han Sans JP", sans-serif;
+    font-size: 10pt;
+    border-top: 0.5pt solid #000;
+    vertical-align: top;
+    padding-top: 1mm;
+  }
+}
+
+body {
+  font-family: "Source Han Sans JP", sans-serif;
+  font-size: 10pt;
+  padding: 1rem;
+}
+
+table.summary { width: auto; }
+table.summary td, table.summary th { min-width: 7rem; }
+table.report thead { display: table-header-group; }
+table.report tr { break-inside: avoid; }
+td { vertical-align: top; }
+
+@media print {
+  body { padding: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .toolbar { display: none; }
+}
+
+.toolbar { margin-bottom: 1rem; }
