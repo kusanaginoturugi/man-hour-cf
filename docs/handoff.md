@@ -1,6 +1,8 @@
 # 引き継ぎ
 
-- 現状: https://man-hour-cf.kusanaginoturugi.workers.dev にデプロイ済み。Access 未設定なので全リクエスト 401
+- 現状: https://man-hour-cf.kusanaginoturugi.workers.dev で稼働中。Cloudflare Access (チーム showway) で保護済み
+  - Access の AUD は workers.dev の Access 有効化で自動作成されたアプリのもの
+  - Login method はまだ authentik に絞っていない
 - 認証は `CLOUDFLARE_API_TOKEN` 環境変数 (wrangler login は不要)
 - 次にやること: `docs/plan.md` の残タスク
 - 注意
