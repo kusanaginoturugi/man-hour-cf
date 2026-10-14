@@ -10,3 +10,4 @@
   - `ACCESS_*` 未設定だと全部 401 (fail closed)
   - `worker-configuration.d.ts` は `npm run typecheck` で生成する (git 管理外)
   - npm の install scripts は `package.json` の `allowScripts` で esbuild / workerd だけ許可している
+  - `wrangler.jsonc` に `database_id` を入れたのでローカル D1 は別ファイルになった。ローカルで `no such table` が出たら `npm run db:migrate:local`

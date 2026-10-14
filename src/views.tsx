@@ -57,9 +57,9 @@ export const Layout = (props: {
     </head>
     <body>
       <nav class="navbar navbar-expand bg-body-tertiary">
-        <div class="container-fluid">
+        <div class="container-fluid flex-wrap">
           <a class="navbar-brand" href="/jobs">作業時間登録</a>
-          <ul class="navbar-nav me-auto">
+          <ul class="navbar-nav me-auto flex-wrap">
             <li class="nav-item"><a class="nav-link" href="/customers">顧客</a></li>
             <li class="nav-item"><a class="nav-link" href="/jobs">作業時間一覧</a></li>
             <li class="nav-item"><a class="nav-link" href="/jobs/search">検索</a></li>
