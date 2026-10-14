@@ -15,7 +15,7 @@ Rails 版 man-hour を Cloudflare Workers に移植し、authentik SSO でユー
 ## 残タスク
 
 - [x] `wrangler deploy` (2026-10-14、https://man-hour-cf.kusanaginoturugi.workers.dev 、D1 man-hour 自動作成)
-- [ ] リモート D1 マイグレーション (`npm run db:migrate`)
+- [x] リモート D1 マイグレーション (`npm run db:migrate`、2026-10-14)
 - [ ] authentik と Cloudflare Access の設定 (README 参照)、`ACCESS_TEAM_DOMAIN` / `ACCESS_AUD` を secret に登録
 - [ ] 実ブラウザ (Arch の Chromium / Windows 11 の Edge) で印刷プレビューのヘッダ・ページ番号を確認
 - [ ] 旧版の本番データがあれば移行 (手元の development.sqlite3 は空だった)
