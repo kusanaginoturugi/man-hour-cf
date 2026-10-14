@@ -26,7 +26,8 @@ export function ymLabel(ym: string) {
 
 // <input type="datetime-local"> の値 → DB 形式
 export function fromInput(s: string) {
-  return /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/.test(s) ? s.slice(0, 16).replace('T', ' ') : null
+  if (!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/.test(s) || Number.isNaN(Date.parse(`${s.slice(0, 16)}:00Z`))) return null
+  return s.slice(0, 16).replace('T', ' ')
 }
 
 export const toInput = (dt: string) => dt.replace(' ', 'T')
