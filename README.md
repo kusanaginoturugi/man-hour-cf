@@ -21,14 +21,12 @@ npm run typecheck
 ## デプロイ
 
 ```sh
-npx wrangler login
-npx wrangler deploy                # 初回は D1 データベース man-hour が自動作成される想定 (未検証)
+npx wrangler login                 # CLOUDFLARE_API_TOKEN が設定済みなら不要
+npx wrangler deploy                # D1 データベース man-hour は初回に自動作成され、ID が wrangler.jsonc に入る
 npm run db:migrate                 # リモート D1 にマイグレーション適用
 npx wrangler secret put ACCESS_TEAM_DOMAIN   # 例: https://<team>.cloudflareaccess.com
 npx wrangler secret put ACCESS_AUD           # Access アプリケーションの AUD タグ
 ```
-
-D1 が自動作成されなかったら `npx wrangler d1 create man-hour` して、出てきた `database_id` を `wrangler.jsonc` に足す。
 
 `ACCESS_TEAM_DOMAIN` / `ACCESS_AUD` が未設定のときは全リクエストを 401 で拒否する。
 

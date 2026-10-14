@@ -1,6 +1,7 @@
 # 引き継ぎ
 
-- 現状: ローカル (`wrangler dev`) で一通り動作確認済み。まだデプロイしていない
+- 現状: https://man-hour-cf.kusanaginoturugi.workers.dev にデプロイ済み。Access 未設定なので全リクエスト 401
+- 認証は `CLOUDFLARE_API_TOKEN` 環境変数 (wrangler login は不要)
 - 次にやること: `docs/plan.md` の残タスク
 - 注意
   - `DEV_USER_EMAIL` は localhost からのアクセスでしか効かないが、本番の vars/secret には入れないこと
