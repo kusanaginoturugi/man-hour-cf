@@ -1,5 +1,10 @@
 # 作業記録
 
+## 2026-10-25 Node 更新
+
+- Node の脆弱性対応で 26.12.1 以上にする。`.mise.toml` を `26.11.1` 固定から `latest` に、CI の `setup-node` を `26` から `latest` + `check-latest: true` に変更（ランナーにキャッシュされた古い 26.x を使わないようにするため）。
+- 検証: mise で 26.12.1 を入れ、`npm ci`、`npm run typecheck` 成功。
+
 ## 2026-10-24 脆弱性点検
 
 - `npm audit`: 3件（moderate 2、high 1）→ 0件。`npm audit --omit=dev` は前後とも0件。
