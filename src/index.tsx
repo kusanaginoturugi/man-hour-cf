@@ -1,6 +1,7 @@
 import { Hono, type Context } from 'hono'
 import { deleteCookie, getCookie, setCookie } from 'hono/cookie'
 import { csrf } from 'hono/csrf'
+import { bodyLimit } from 'hono/body-limit'
 import type { Child } from 'hono/jsx'
 import { addMinutes, authenticate, buildSummaries, currentYm, fromInput, isYm, monthStart, addMonths } from './lib'
 import * as V from './views'
@@ -10,6 +11,7 @@ type C = Context<App>
 
 const app = new Hono<App>()
 
+app.use(bodyLimit({ maxSize: 64 * 1024 }))
 app.use(csrf())
 
 app.use(async (c, next) => {

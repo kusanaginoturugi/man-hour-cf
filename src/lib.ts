@@ -75,9 +75,15 @@ export function buildSummaries(
 let jwks: ReturnType<typeof createRemoteJWKSet> | undefined
 
 // ACCESS_* は wrangler secret、DEV_USER_EMAIL は .dev.vars で入れる。wrangler types に出ないことがあるので型はここで持つ
-type AuthEnv = { ACCESS_TEAM_DOMAIN?: string; ACCESS_AUD?: string; DEV_USER_EMAIL?: string }
+declare global {
+  interface Env {
+    ACCESS_TEAM_DOMAIN?: string
+    ACCESS_AUD?: string
+    DEV_USER_EMAIL?: string
+  }
+}
 
-export async function authenticate(req: Request, env: AuthEnv): Promise<string | null> {
+export async function authenticate(req: Request, env: Env): Promise<string | null> {
   const host = new URL(req.url).hostname
   if (env.DEV_USER_EMAIL && (host === 'localhost' || host === '127.0.0.1')) {
     return env.DEV_USER_EMAIL.toLowerCase()
