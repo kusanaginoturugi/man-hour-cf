@@ -6,7 +6,7 @@
 - `wrangler` を 4.150.0 → 4.152.0、`jose` を 6.2.12 → 6.2.13 に更新。`typescript` は 7.0.2 が最新版、`hono` は 4.13.13 が最新版。
 - 残った指摘は開発依存 `wrangler` → `miniflare` → `undici` 7.29.1 に由来。`undici` 7.30.1 へ override し、全件解消。`miniflare` が修正版 `undici` を直接採用したら override を外す。
 - `hono/body-limit` でリクエスト本文を 64 KiB に制限。認証は Access JWT 検証、CSRF は Origin チェック、D1 は bind と所有者条件を使用。外部 URL・ファイルパス入力はない。HTML は JSX のエスケープを使用し、印刷ページの CSS 文字列もエスケープしている。
-- `master` 向け CI（型チェック・本番依存監査）、CodeQL、PR の Dependency Review、npm / GitHub Actions の週次 Dependabot 更新を追加。GitHub の Dependabot 脆弱性アラートを有効化し、GET で HTTP 204、直後の open alert 0件を確認。main の保護設定、security updates、デプロイは変更していない。
+- `master` 向け CI（型チェック・本番依存監査）、CodeQL、PR の Dependency Review、npm / GitHub Actions の週次 Dependabot 更新を追加。Actions は Node 24 対応版に更新。GitHub の Dependabot 脆弱性アラートを有効化し、GET で HTTP 204、直後の open alert 0件を確認。ブランチ保護設定、security updates、デプロイは変更していない。
 - 検証: `npm ci`、`npm run typecheck`、`npx wrangler deploy --dry-run`、`npm audit`、`npm audit --omit=dev --audit-level=high` 成功。ローカルで 65537 バイトの POST は 413、通常の認証なし POST は 403。既存のテスト・ビルドスクリプトはない。
 
 ## 2026-10-14 初期移植
