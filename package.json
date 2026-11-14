@@ -11,7 +11,7 @@
   "type": "module",
   "dependencies": {
     "hono": "^4.13.13",
-    "jose": "^6.2.13"
+    "jose": "^6.2.17"
   },
   "devDependencies": {
     "typescript": "^7.0.2",
